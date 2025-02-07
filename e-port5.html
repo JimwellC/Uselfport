@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio | Jimwell Calma</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #333, #555);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        /* Container */
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        body.dark-mode .container {
+            background: #333;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            background: #e0e0e0;
+        }
+
+        body.dark-mode .section {
+            background: #444;
+        }
+
+        body.dark-mode .section:hover {
+            background: #555;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            color: #444;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode .section h2 {
+            color: #ddd;
+        }
+
+        .section p {
+            display: none;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode .section p {
+            color: #ccc;
+        }
+
+        /* Toggle Button */
+        .toggle-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .toggle-btn {
+            background: #444;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #333;
+            color: white;
+            margin-top: 30px;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jimwell Calma</h1>
+        <p>Date: February 7, 2025</p>
+        <p>Section: WD-301 BSIT</p>
+    </header>
+
+    <div class="container">
+        <div class="section" onclick="toggleContent(this)">
+            <h2>How Different Social Media Shape the View of People Towards Beauty</h2>
+            <p>Social media platforms like Instagram, Facebook, and TikTok have a significant impact on people's perceptions of beauty. These platforms often showcase idealized images and videos that set unrealistic beauty standards. Filters and photo-editing tools further distort reality, leading to a culture where appearance is highly curated. This can affect self-esteem and body image, especially among young users who may compare themselves to these unattainable standards.</p>
+        </div>
+        <div class="section" onclick="toggleContent(this)">
+            <h2>Credit Card: Need or Want?</h2>
+            <p>In my observation, a credit card is increasingly becoming a need for many individuals. Credit cards provide a convenient way to borrow money to help pay for everyday needs, such as groceries, utilities, and medical expenses. They are also essential for managing unexpected emergencies, such as car repairs or sudden travel requirements. Additionally, credit cards are crucial for building a credit history, which is necessary for securing loans and mortgages in the future.</p>
+        </div>
+        <div class="section" onclick="toggleContent(this)">
+            <h2>Understanding Sexual Selves Through an Interactionist Perspective</h2>
+            <p>From an interactionist perspective, sexual selves develop through social interactions and the meanings we attach to these interactions. Our understanding of sexuality is shaped by our experiences, relationships, and the cultural context in which we live. This perspective emphasizes the fluidity of sexual identity and the role of communication in expressing and negotiating sexual selves. It highlights the importance of social context and the dynamic nature of sexual identity formation.</p>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-container">
+        <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <footer>
+        © 2025 Jimwell Calma | All Rights Reserved
+    </footer>
+
+    <script>
+        // Collapsible Sections
+        function toggleContent(section) {
+            let content = section.querySelector("p");
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
